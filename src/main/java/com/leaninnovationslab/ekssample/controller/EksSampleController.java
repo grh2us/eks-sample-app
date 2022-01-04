@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EksSampleController {
 
     @GetMapping("/test")
-    public String testEndpoint(){
-        return "Hello from the server";
+    public String testEndpoint() {
+        return "Hello from the server, this was deployed using code build";
     }
 }
