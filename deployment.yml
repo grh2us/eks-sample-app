@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inappbi-dev-deployment
+  namespace: inappbi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: inappbidev
+  template:
+    metadata:
+      labels:
+        app: inappbidev
+    spec:
+      containers:
+        - name: inappbidev
+          image: CONTAINER_IMAGE
+          ports:
+            - containerPort: 8080
+          env:
+            - name: INAPPBI_ENV
+              value:  devfuture
